@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/header :: common-header"/>
+
+
+<body>
+<div class="container">
+
+    <div th:replace="common/navbar :: common-navbar"/>
+
+<h1>Person Application Form</h1>
+<h3>Please enter details</h3>
+
+    <form th:action="@{/form}" th:object="${person}" method="POST">
+        <div class="form-group">
+            <label for="firstName">First Name: </label>
+            <input type="text" class="form-control" th:field="*{firstName}" id="firstName" placeholder="First Name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name: </label>
+            <input type="text" class="form-control" th:field="*{lastName}" id="lastName" placeholder="Last Name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" th:field="*{email}" id="email" placeholder="Email"/>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+    </form>
+</div>
+
+<div th:replace="common/header :: common-script"/>
+
+</body>
+</html>

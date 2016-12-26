@@ -27,10 +27,13 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-	compile('org.springframework.boot:spring-boot-starter-security')
+	// compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	// compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile 'org.projectlombok:lombok-maven-plugin:1.16.10.0'
+    compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
+    compile group: 'org.webjars.bower', name: 'jquery', version: '3.1.1'
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
