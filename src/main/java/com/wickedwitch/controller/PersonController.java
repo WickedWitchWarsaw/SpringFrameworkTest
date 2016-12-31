@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import static org.springframework.boot.Banner.Mode.LOG;
 
 /**
  * Created by ZuZ on 2016-12-25.
@@ -30,7 +29,7 @@ public class PersonController {
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
     public void formPost(@ModelAttribute("person") Person person) {
-        LOG.info("Adding person details: {}", person);
+        LOG.info("Adding person details {}", person);
 
     }
 }
