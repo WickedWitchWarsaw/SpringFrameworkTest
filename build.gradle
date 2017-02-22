@@ -27,17 +27,18 @@ repositories {
 
 
 dependencies {
-	// compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-	// compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile 'org.projectlombok:lombok-maven-plugin:1.16.10.0'
+
+	compile 'com.h2database:h2:1.4.191'
+
     compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
     compile group: 'org.webjars.bower', name: 'jquery', version: '3.1.1'
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.8'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.4.2.RELEASE'
-	compile group: 'com.h2database', name: 'h2', version: '1.4.193'
-	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.6.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '1.5.1.RELEASE'
+
 
 
 	runtime('org.springframework.boot:spring-boot-devtools')
