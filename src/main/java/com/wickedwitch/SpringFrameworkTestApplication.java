@@ -1,5 +1,6 @@
 package com.wickedwitch;
 
+import com.wickedwitch.service.EventServiceDB;
 import com.wickedwitch.service.PersonServiceDB;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,12 +23,19 @@ public class SpringFrameworkTestApplication implements CommandLineRunner {
 	@Autowired
 	private PersonServiceDB personServiceDB;
 
+	@Autowired
+	private EventServiceDB eventServiceDB;
+
 	@Override
 	public void run(String... args) throws Exception {
-		LOG.info("@@Inserting Data...");
 		personServiceDB.insertData();
-		LOG.info("@@FindAll method invoked...");
+		eventServiceDB.insestDummyEventData();
+		LOG.info("@@Invoking FindAll method on PersonDB...");
 		personServiceDB.findAll().forEach(entry -> LOG.info(entry.toString()));
+		LOG.info("@@Invoking FindAllMethod on EventDB...");
+		eventServiceDB.findAll().forEach(event -> LOG.info(event.toString()));
+		LOG.info("@@FindByEventName on EventDB");
+		LOG.info(eventServiceDB.findByEventName("Party1").toString());
 
 	}
 }
